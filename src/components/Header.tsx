@@ -112,7 +112,7 @@ const Header = () => {
               onClick={toggleMenu}
               className="hover:text-blue-700 cursor-pointer"
             >
-              Tours
+              Packages
             </Link>
             <div className="text-lg font-medium">
   <a href="/signin" className="hover:text-blue-700">Sign in</a>
