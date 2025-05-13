@@ -5,7 +5,21 @@ import englandImg from './assets/img/england.jpg';
 import singaporeImg from './assets/img/singapore.jpg';
 import florenceImg from './assets/img/florence.jpg';
 import romeImg from './assets/img/rome.jpg';
-import londonImg from './assets/img/london.jpg'
+import londonImg from './assets/img/london.jpg';
+import jamesImg from './assets/img/james.jpg';
+import emilyImg from './assets/img/emily.jpg';
+import annaImg from './assets/img/anna.jpg';
+import jakeImg from './assets/img/jake.jpg';
+import lauraImg from './assets/img/laura.jpg';
+import tomImg from './assets/img/tom.jpg';
+import danielImg from './assets/img/daniel.jpg';
+import miaImg from './assets/img/mia.jpg';
+import robertImg from './assets/img/robert.jpg';
+import oliviaImg from './assets/img/olivia.jpg';
+import alexImg from './assets/img/alex.jpg';
+import sarahImg from './assets/img/sarah.jpg';
+
+
 
 export const FEATURE = [
     {
@@ -71,5 +85,87 @@ export const PACKAGES = [
         desShort:"Experience the vibrant spirit of London on a captivating tour filled with history",
         des: "Experience the vibrant spirit of London on a captivating tour filled with history, culture, and iconic sights. Explore the city's historic landmarks — visit the majestic Tower of London, take a photo by Tower Bridge, and stroll through Westminster to see Big Ben and the Houses of Parliament. End the day with a scenic ride on the London Eye, offering breathtaking views of the city skyline. Immerse yourself in culture at the British Museum, enjoy shopping in Covent Garden, and take a peaceful walk through Hyde Park. In the evening, catch a world-class performance in the West End or enjoy classic British cuisine in a cozy pub.",
         duration: "3 days"
+    },
+]
+
+export const TESTIMONIAL = [
+    {
+        name: "James M.",
+        URL: jamesImg,
+        comment:"Fantastic destination, knowledgeable guides, seamless logistic. Specteculare view",
+    },
+    {
+        name: "Emily R.",
+        URL: emilyImg,
+        comment:"This was one of the best trips I’ve ever taken! Everything was well organized, and the guide was super friendly. I’d definitely book with this company again.",
+    },
+    {
+        name: "Jake D.",
+        URL: jakeImg,
+        comment:"Great experience from start to finish. The destinations were beautiful, and the accommodations exceeded my expectations. Highly recommended!",
+    },
+    {
+        name: "Anna S.",
+        URL: annaImg,
+        comment:"I loved every moment of the tour. It was stress-free and full of amazing sights. Can’t wait for my next trip!",
+    },
+    {
+        name: "Laura R.",
+        URL: lauraImg,
+        comment:"Very professional service. The team was helpful and always available to answer my questions. A great way to explore new places.",
+    },
+    {
+        name: "Tom B.",
+        URL: tomImg,
+        comment:"The trip was everything I hoped for and more. Easy booking and excellent customer support. Truly a 5-star experience.",
+    },
+    {
+        name: "Daniel C.",
+        URL: danielImg,
+        comment:"Amazing value for the price. The guides knew so much about each place, and their passion really showed. I learned and saw so much.",
+    },
+    {
+        name: "Mia T.",
+        URL: miaImg,
+        comment:"Booking was easy, and the trip was unforgettable. The photos don’t do the views justice—it’s even better in person!",
+    },
+    {
+        name: "Robert L.",
+        URL: robertImg,
+        comment:"Everything was taken care of, so I could just relax and enjoy. The team clearly cares about making each trip special.",
+    },
+    {
+        name: "Olivia W.",
+        URL: oliviaImg,
+        comment:"This trip gave me memories for a lifetime. The food, the culture, the people—everything was perfect. Highly recommended!",
+    },
+    {
+        name: "Alex N.",
+        URL: alexImg,
+        comment:"Incredible experience from day one. Great communication and planning. I felt safe, informed, and excited the whole time.",
+    },
+    {
+        name: "Sarah P.",
+        URL: sarahImg,
+        comment:"Loved the variety of activities and how smoothly everything went. It was my first group tour, and I’m already planning the next one!",
+    },
+]
+
+export const ACCORDION = [
+    {
+        question: "What payment methods do you accept?",
+        answer: "We accept credit/debit cards, PayPal, and bank transfers."
+    },
+    {
+        question: "What is your refund and cancellation policy?",
+        answer: "Refunds avaliable per our policy."
+    },
+    {
+        question: "Are group booking discounts available?",
+        answer: "Yes, group discounts offered."
+    },
+    {
+        question: "How can I contact customer support?",
+        answer: "Contact via phone, email or live chat."
     },
 ]
