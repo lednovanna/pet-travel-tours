@@ -6,6 +6,7 @@ import Feature from './components/Feature';
 import Packages from './components/Packages';
 import Testimonial from './components/Testimonial';
 import PackageDetails from './components/PackageDetails';
+import GetApp from './components/GetApp';
 import "slick-carousel/slick/slick.css";
 import './App.css';
 
@@ -13,7 +14,7 @@ function App() {
   
 
   return (
-    <div className=''>
+    <div className='overflow-y-hidden'>
     <Header/>
       <main className="">
         <Routes>
@@ -21,18 +22,18 @@ function App() {
             <>
             <Hero/>
             <Feature/>
-           <Packages/>
-           <Testimonial/>
+            <Packages/>
+            <Testimonial/>
+            <GetApp />
             </>
           }/>
             
-           <Route path="/packages/:title" element={<PackageDetails />} />
-       </Routes>
+            <Route path="/packages/:title" element={<PackageDetails />} />
+        </Routes>
     </main>
     <Footer />
-     
     </div>
-   
+
   )
 }
 

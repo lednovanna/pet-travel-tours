@@ -18,7 +18,7 @@ const Testimonial = () => {
       };
 
     return (
-        <section className="container  m-auto py-13 xl:py-18  relative" id="testimonial">
+        <section className="container  m-auto py-12 xl:py-18  relative" id="testimonial">
         <div className="flex flex-col gap-8 lg:flex-row  px-4">
             <div className="w-full lg:w-1/2 ">
                 <h4 className="mx-4 text-2xl text-amber-600">HAPPY CUSTOMERS</h4>
