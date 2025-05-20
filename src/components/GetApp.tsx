@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 import { FaApple } from "react-icons/fa";
 import { FaGooglePlay } from "react-icons/fa";
 import appImg from "../assets/img/app.png";
@@ -17,25 +17,26 @@ const GetApp = () => {
                     details — all from your phone. Download now and explore the world 
                     with ease!</p>
                     <div className="flex w-full flex-col gap-3 whitespace-nowrap mt-5 xl:flex-row">
-                    <a href="#" className="w-full inline-flex items-center justify-center gap-3 xl:w-auto bg-black text-white px-5 py-3 rounded-xl shadow-md hover:bg-neutral-800 transition-all">
+                    <Link to="#" className="w-full inline-flex items-center justify-center gap-3 xl:w-auto bg-black text-white px-5 py-3 rounded-xl shadow-md hover:bg-neutral-500 transition-all">
                     <FaApple className="text-[26px]  "/>
                 <div className="text-center ">
                 <p className="text-[12px] sm:text-[12px] leading-none">Download on the</p>
                 <p className="text-m font-semibold leading-tight  sm:text-2xl">App Store</p>
                 </div>
-                </a>
+                </Link>
 
-                    <a href="#" className=" w-full inline-flex items-center justify-center gap-3 xl:w-auto bg-amber-600 text-white border border-amber-600 px-5 py-3 rounded-xl shadow-md hover:bg-amber-50 transition-all">
+                    <Link to="#" className=" w-full inline-flex items-center justify-center gap-3 xl:w-auto bg-amber-600 text-white border border-amber-600 px-5 py-3 rounded-xl shadow-md
+                        hover:bg-amber-500 transition-all">
                     <FaGooglePlay  className="text-[26px]  "/>
                     <div className="text-center">
                     <p className="text-[12px] leading-none sm:text-[12px]">Download on the</p>
                     <p className="text-m font-semibold leading-tight sm:text-2xl">Play Store</p>
                     </div>
-                    </a>
+                    </Link>
                     </div>
             </div>
             <div className="flex flex-1 items-center justify-end">
-                <img src={appImg} alt=" Mobile App image" className="w-[650px] h-[670px]"/>
+                <img src={appImg} alt=" Mobile App image" className="w-full object-contain max-w-[650px] h-auto  "/>
             </div>
         </div>
         </section>

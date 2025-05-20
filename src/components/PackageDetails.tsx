@@ -1,10 +1,11 @@
 import { PACKAGES } from '../data';
-import { useParams } from 'react-router';
-import {Link} from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+
+
 
 const PackageDetails = () => {
 
-    const { title } = useParams<{ title: string }>();
+  const { title } = useParams();
 
   const selectedPackage = PACKAGES.find(
     (pkg) => pkg.title.toLowerCase() === decodeURIComponent(title || '').toLowerCase()
@@ -16,7 +17,7 @@ const PackageDetails = () => {
 
 
     return(
-        <section className="p-8 my-30 max-w-4xl mx-auto" >
+        <section className="p-8 my-40 max-w-4xl mx-auto" >
             <div className="text-justify">
             <h2 className="text-3xl font-bold mb-4">{title}</h2>
             <img src={selectedPackage.URL} alt={title} className="w-full h-96 object-cover rounded-lg mb-6" />
@@ -34,6 +35,7 @@ const PackageDetails = () => {
                     >
                         Order
                     </Link>
+                    <Link to="/" className="text-blue-600 underline mt-4 block">← Back to all packages</Link>
                 </div>
         </section>
     )

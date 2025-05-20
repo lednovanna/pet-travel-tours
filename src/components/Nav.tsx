@@ -1,17 +1,16 @@
-import { Link as ScrollLink } from 'react-scroll';
-import { Link as RouterLink } from 'react-router-dom';
+
+import { Link  } from 'react-scroll';
 
 const Nav = () => {
   const scrollLinkClass =
     'cursor-pointer px-4 py-2 transition-colors duration-200 hover:text-blue-600';
-  const routerLinkClass =
-    'cursor-pointer px-4 py-2 transition-colors duration-200 hover:text-blue-600';
-  const activeClass = 'text-amber-500 font-bold';
+  
+  const activeClass = 'text-white bg-amber-500 px-4 py-2 rounded-full shadow-md transition-all duration-300';
 
   return (
     <nav>
       <div className="flex gap-8 justify-center py-2 text-gray-700 font-medium text-lg">
-        <ScrollLink
+        <Link
           to="home"
           spy={true}
           smooth={true}
@@ -21,27 +20,52 @@ const Nav = () => {
           className={scrollLinkClass}
         >
           Home
-        </ScrollLink>
-        <ScrollLink
-          to="about"
+        </Link>
+        <Link
+          to="destinations"
+          spy={true}
           smooth={true}
           duration={500}
           offset={-70}
           activeClass={activeClass}
           className={scrollLinkClass}
         >
-          About
-        </ScrollLink>
-
-        {/* Этот пункт ведёт на /packages */}
-        <RouterLink
-          to="/"
-          className={routerLinkClass}
+          Destinations
+        </Link>
+        <Link
+          to="offers"
+          spy={true}
+          smooth={true}
+          duration={500}
+          offset={-70}
+          activeClass={activeClass}
+          className={scrollLinkClass}
         >
-          Packages
-        </RouterLink>
-       
-      </div>
+          Offers
+        </Link>
+        <Link
+          to="testimonial"
+          spy={true}
+          smooth={true}
+          duration={500}
+          offset={-70}
+          activeClass={activeClass}
+          className={scrollLinkClass}
+        >
+          Testimonials
+        </Link>
+        <Link
+          to="downloads"
+          spy={true}
+          smooth={true}
+          duration={500}
+          offset={-70}
+          activeClass={activeClass}
+          className={scrollLinkClass}
+        >
+          Get App
+        </Link>
+      </div> 
     </nav>
   );
 };

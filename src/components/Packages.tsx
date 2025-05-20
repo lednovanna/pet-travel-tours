@@ -6,7 +6,7 @@ import { RiTimeLine } from "react-icons/ri";
 
 const Packages = () => {
     return (
-        <section className="container py-16 xl:py-28  bg-slate-50 m-auto" id="listing">
+        <section className="container py-16 xl:py-28  bg-slate-50 m-auto" id="offers">
         <div className="mx-4 ">
             <h4 className="text-2xl text-amber-600">LOOK AT THESE OFFERS</h4>
             <h3 className="max-w-lg font-bold text-[32px]"> We Provide Top Destinations</h3>
@@ -76,7 +76,7 @@ const PackageItem = ({URL, title, location, price, desShort, duration}: PackageI
         </div>
         <div className="mt-auto px-4 pb-4">
                     <Link
-                        to={`/Packages/${encodeURIComponent(title)}`}
+                        to={`/packages/${encodeURIComponent(title)}`}
                         className="inline-block w-full text-center bg-amber-600 hover:bg-amber-700 my-4 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300"
                     >
                         View Details

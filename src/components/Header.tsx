@@ -29,7 +29,7 @@ const Header = () => {
       >
         <div className="container mx-auto flex justify-between items-center px-4 ">
           <Link
-            to="home"
+            to=""
             className="flexCenter py-3"
             smooth={true}
             duration={500}
@@ -38,7 +38,7 @@ const Header = () => {
           </Link>
   
           <div className="hidden md:flex">
-            <Nav />
+            <Nav/>
           </div>
   
           <div className="hidden md:flex  items-center gap-3 my-2">
@@ -84,7 +84,7 @@ const Header = () => {
     >
       <X size={36} />
       </button>
-            <Link
+      <Link
               to="home"
               smooth
               duration={500}
@@ -95,29 +95,49 @@ const Header = () => {
               Home
             </Link>
             <Link
-              to="about"
+              to="destinations"
               smooth
               duration={500}
               offset={-70}
               onClick={toggleMenu}
               className="hover:text-blue-700 cursor-pointer"
             >
-              About
+              Destinations
             </Link>
             <Link
-              to="tours"
+              to="offers"
               smooth
               duration={500}
               offset={-70}
               onClick={toggleMenu}
               className="hover:text-blue-700 cursor-pointer"
             >
-              Packages
+              Offers
+            </Link>
+            <Link
+              to="testimonial"
+              smooth
+              duration={500}
+              offset={-70}
+              onClick={toggleMenu}
+              className="hover:text-blue-700 cursor-pointer"
+            >
+              Testimonials
+            </Link>
+            <Link
+              to="downloads"
+              smooth
+              duration={500}
+              offset={-70}
+              onClick={toggleMenu}
+              className="hover:text-blue-700 cursor-pointer"
+            >
+              Get App
             </Link>
             <div className="text-lg font-medium">
-  <a href="/signin" className="hover:text-blue-700">Sign in</a>
+  <Link to="/signin" className="hover:text-blue-700">Sign in</Link>
   <span className="mx-1 text-gray-500">/</span>
-  <a href="/login" className="hover:text-blue-700">Login</a>
+  <Link to="/login" className="hover:text-blue-700">Login</Link>
 </div>
             <a
               href="tel:+380671234567"

@@ -5,7 +5,7 @@ import { MdLocationPin } from "react-icons/md";
 
 const Hero = () => {
     return (
-        <section className=" relative justify-center h-screen w-full tracking-wider overflow-hidden">
+        <section className=" relative justify-center h-screen w-full tracking-wider overflow-hidden" id="home">
         {/* Фоновое видео */}
         <div className="absolute w-full h-full top-0 left-0">
           <video

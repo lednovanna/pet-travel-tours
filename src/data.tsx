@@ -169,3 +169,35 @@ export const ACCORDION = [
         answer: "Contact via phone, email or live chat."
     },
 ]
+
+export const FOOTER_LINKS = [
+    {
+        title: "Learn More",
+        links: [
+            "Abour Us",
+            "Travel Guides",
+            "FAQ",
+            "Book Now",
+            "Privacy Policy",
+
+        ],
+    },
+    {
+        title: "Our Community",
+        links: [
+            "Terms and Conditions",
+            "Special Offers",
+            "Customer Reviews",
+        ],
+    },
+];
+
+export const FOOTER_CONTACT_INFO = {
+ title: "Contuct us",
+ links: [
+    {label: "Contuct Number", value: "+1809 713 45 60"},
+    {label: "Email Address", value: "info@travel.com"}
+ ],
+};
+
+

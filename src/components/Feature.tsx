@@ -43,7 +43,7 @@ const Feature = () => {
         };
 
     return(
-        <section className="justify-center w-full m-auto py-20 xl:py-32 bg-white " id="feature">
+        <section className="justify-center w-full m-auto py-20 xl:py-32 bg-white " id="destinations">
         <div className="container  m-auto">
             <div className="mx-4">
                <h4 className=" text-2xl text-amber-600">WHAT WE SERVE</h4> 
