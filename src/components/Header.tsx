@@ -1,7 +1,10 @@
 import logo from '../assets/icons/logo.jpg';
 import { Menu, X } from 'lucide-react';
 import Nav from './Nav';
-import { Link } from 'react-scroll';
+import { Link } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
+
+
 import { useState, useEffect } from 'react';
 import { IoCallOutline } from "react-icons/io5";
 import Button from './Button';
@@ -42,18 +45,21 @@ const Header = () => {
           </div>
   
           <div className="hidden md:flex  items-center gap-3 my-2">
-             <Button
-            type="button"
-            title="Login"
-            variant=""
-            
-            />
+          <RouterLink to="/login">
+              <Button
+                type="button"
+                title="Sign in"
+                variant=""
+              />
+            </RouterLink>
             <span className="mx-1 text-gray-500">/</span>
-            <Button
-            type="button"
-            title="Signin"
-            variant=""
-             />
+            <RouterLink to="/register">
+              <Button
+                type="button"
+                title="Sign up"
+                variant=""
+              />
+            </RouterLink>
             <a
               href="tel:+380671234567"
               className="hidden lg:flex hover:text-blue-700 ml-4  gap-1 text-l font-medium transition-colors duration-200 "aria-label="Phone number"
@@ -135,9 +141,9 @@ const Header = () => {
               Get App
             </Link>
             <div className="text-lg font-medium">
-  <Link to="/signin" className="hover:text-blue-700">Sign in</Link>
+  <RouterLink to="/register" className="hover:text-blue-700">Sign up</RouterLink>
   <span className="mx-1 text-gray-500">/</span>
-  <Link to="/login" className="hover:text-blue-700">Login</Link>
+  <RouterLink to="/login" className="hover:text-blue-700">Sign in</RouterLink>
 </div>
             <a
               href="tel:+380671234567"

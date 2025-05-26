@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 
 
 
+
 const PackageDetails = () => {
 
   const { title } = useParams();
@@ -37,6 +38,7 @@ const PackageDetails = () => {
                     </Link>
                     <Link to="/" className="text-blue-600 underline mt-4 block">← Back to all packages</Link>
                 </div>
+                
         </section>
     )
 }

@@ -201,3 +201,56 @@ export const FOOTER_CONTACT_INFO = {
 };
 
 
+export const FORM_REGISTER = [
+    {
+        name: "name",
+        placeholder: "Name",
+        reguired: true,
+    },
+    {
+        name: "surname",
+        placeholder: "Surname",
+        reguired: true,
+    },
+    {
+        name: "email",
+        placeholder: "E-mail",
+        pattern:"^\\w.-\\+@[a-zA-Z\\d.-]+\\.[a-zA-Z]{2,}$",
+        reguired: true,
+        errorMessage: "E-mail is invalid",
+    },
+    {
+        name: "password",
+        placeholder: "Password",
+        type: "password",
+        reguired: true,
+        minLength: 6,
+        errorMessage: "Password must be at least 6 characters",
+        
+    },
+    {
+        name: "duplicate",
+        placeholder: "Confirm password",
+        required: true,
+        type: "password",
+        errorMessage: "The passwords do not match",
+        validate: (state: FormData) => state.password !== state.duplicate,
+    },
+]
+
+export const initialState: FormData = {
+    name: "",
+    password: "",
+    duplicate: "",
+    email: "",
+    surname: "",
+};
+
+export type FormData = {
+    name: string,
+    password: string,
+    duplicate: string | undefined,
+    email: string,
+    surname: string,
+};
+

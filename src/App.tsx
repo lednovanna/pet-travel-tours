@@ -1,4 +1,4 @@
-import { Routes, Route  } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -8,41 +8,41 @@ import Packages from './components/Packages';
 import Testimonial from './components/Testimonial';
 import PackageDetails from './components/PackageDetails';
 import GetApp from './components/GetApp';
+import Register from './components/Register';
+import Login from './components/Login';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './App.css';
 
-
-
-function App() {
-   
-  
-   
-
-  return (
-    <div className=''>
-    <Header/>
-      <main className="">
-        <Routes>
-        <Route path="/" element={
-            <>
+function MainLayout() {
+  return(
+    <>
+     <Header/>
+     <main>
               <Hero />
               <Feature />
               <Packages />
               <Testimonial />
               <GetApp />
-            </>
-          } />
-          
+     </main>
+      <Footer />
+    </>
+  );
+}
+
+function App() { 
+
+  return (
+    
+        <Routes>
+           <Route path="/" element={<MainLayout />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/packages/:title" element={<PackageDetails />} />
           
         </Routes>
          
          
-         
-    </main>
-    <Footer />
-    </div>
 
   )
 }
