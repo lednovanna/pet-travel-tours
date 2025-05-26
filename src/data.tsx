@@ -254,3 +254,31 @@ export type FormData = {
     surname: string,
 };
 
+export const FORM_LOGIN = [
+    {
+      name: "email",
+      placeholder: "E-mail",
+      required: true,
+      type: "email",
+      pattern: "^\\S+@\\S+\\.\\S+$",
+      errorMessage: "Invalid email address",
+    },
+    {
+      name: "password",
+      placeholder: "Password",
+      required: true,
+      type: "password",
+    },
+  ];
+  
+  export type LoginFormData = {
+    email: string;
+    password: string;
+    stayLoggedIn: boolean;
+  };
+  
+  export const initialLoginState: LoginFormData = {
+    email: "",
+    password: "",
+    stayLoggedIn: false,
+  };
