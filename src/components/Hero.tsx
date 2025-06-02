@@ -1,9 +1,37 @@
 import videoHero from '../assets/video/videoHero.mp4';
 import { MdLocationPin } from "react-icons/md";
+import { PACKAGES } from '../data';
+import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
+
 
 
 
 const Hero = () => {
+
+  const [city, setCity] = useState('');
+  const navigate = useNavigate();
+  const [maxPrice, setMaxPrice] = useState(10000);
+
+  const handleSearch = () => {
+    const results = PACKAGES.filter((tour) =>{ 
+     const matchesCity = tour.title.toLowerCase().includes(city.toLowerCase()) ||
+                         tour.location.toLowerCase().includes(city.toLowerCase());
+
+    const matchesPrice = Number(tour.price) <= maxPrice;
+     return matchesCity && matchesPrice;
+    });
+     
+     if (results.length === 0) {
+    navigate("/search", { state: { results: [], noResults: true } });
+  } else {
+    navigate("/search", { state: { results } });
+  }
+    
+    
+    
+  };
+
     return (
         <section className=" relative justify-center h-screen w-full tracking-wider overflow-hidden" id="home">
         {/* Фоновое видео */}
@@ -31,10 +59,8 @@ const Hero = () => {
           {/* Форма поиска */}
           <div className="">
             <div className=" ">
-              <div className="  bg-white text-center text-gray-950 py-2 px-4 mb-5 rounded-md">
-                Search for your trip
-              </div>
-  
+              
+              
               <div className=" flex-col md:flex-row gap-6 p-6 bg-white rounded-md">
                 {/* Destination */}
                 <div className="flex-1">
@@ -46,6 +72,9 @@ const Hero = () => {
                       type="text"
                       placeholder="Enter city..."
                       className="bg-transparent outline-none  w-full text-gray-700"
+                      value={city}
+                      onChange={(e) => setCity(e.target.value)}
+                      
                     />
                     <MdLocationPin className="text-xl text-black ml-2" />
                   </div>
@@ -70,15 +99,30 @@ const Hero = () => {
                     </label>
                     <span className="text-gray-950 font-semibold mt-2 items-center text-s">$10 000</span>
                   </div>
+                  
                   <input
                     type="range"
                     max="10000"
                     min="300"
+                    value={maxPrice}
+                    onChange={(e) => setMaxPrice(Number(e.target.value))}
                     className="w-full"
                   />
+                  <span className="text-gray-950 font-semibold mt-2 items-center text-s">
+                  ${maxPrice}
+                  </span>
                 </div>
               </div>
+
+              <div className=" text-center text-white py-2 px-4 mt-5 hover:bg-amber-400 bg-amber-500
+               rounded-md cursor-pointer"
+               onClick={handleSearch}
+               >
+                Search for your trip
+              </div>
+
             </div>
+            
           </div>
         </div>
         </section>

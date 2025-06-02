@@ -6,6 +6,7 @@ import singaporeImg from './assets/img/singapore.jpg';
 import florenceImg from './assets/img/florence.jpg';
 import romeImg from './assets/img/rome.jpg';
 import londonImg from './assets/img/london.jpg';
+import parisImg from './assets/img/paris.jpg';
 import jamesImg from './assets/img/james.jpg';
 import emilyImg from './assets/img/emily.jpg';
 import annaImg from './assets/img/anna.jpg';
@@ -78,16 +79,19 @@ export const PACKAGES = [
         duration: "3 days"
     },
     {
-        title: "London",
-        location: "England",
-        price: "3000",
-        URL: londonImg,
-        desShort:"Experience the vibrant spirit of London on a captivating tour filled with history",
-        des: "Experience the vibrant spirit of London on a captivating tour filled with history, culture, and iconic sights. Explore the city's historic landmarks — visit the majestic Tower of London, take a photo by Tower Bridge, and stroll through Westminster to see Big Ben and the Houses of Parliament. End the day with a scenic ride on the London Eye, offering breathtaking views of the city skyline. Immerse yourself in culture at the British Museum, enjoy shopping in Covent Garden, and take a peaceful walk through Hyde Park. In the evening, catch a world-class performance in the West End or enjoy classic British cuisine in a cozy pub.",
-        duration: "3 days"
+        title: "Paris",
+        location: "France",
+        price: "3500",
+        URL: parisImg,
+        desShort:"Experience the magic of Paris in a 4-day tour filled with iconic sights, charming streets, and unforgettable cuisine.",
+        des: "Discover the timeless elegance of Paris on this unforgettable 4-day tour. From the moment you arrive, you'll be immersed in the city's romance, culture, and charm. Begin your journey with a scenic cruise along the Seine River and marvel at the sparkling Eiffel Tower. Explore world-renowned landmarks like the Louvre Museum, Notre-Dame Cathedral, and the majestic Arc de Triomphe.Wander through the artistic streets of Montmartre, sip coffee at cozy Parisian cafés, and indulge in delicious French cuisine at traditional bistros. Take time to stroll along the Champs-Élysées and shop in boutique stores or luxury fashion houses. With expert-guided tours and free time to explore at your own pace, this 4-day Paris getaway is the perfect mix of culture, history, and relaxation. Whether it’s your first visit or a return to a favorite city, Paris will steal your heart all over again.",
+        duration: "4 days"
     },
+
+   
 ]
 
+ 
 export const TESTIMONIAL = [
     {
         name: "James M.",

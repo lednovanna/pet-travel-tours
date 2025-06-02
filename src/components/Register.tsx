@@ -54,9 +54,8 @@ const onSubmit = (e: FormEvent<HTMLFormElement>) => {
         }
 
         return (
-            <div className="flex flex-col">
+            <div key={item.name}  className="flex flex-col">
             <Input
-            key={item.name}
             name={item.name}
             placeholder={item.placeholder}
             type={item.type || "text"}

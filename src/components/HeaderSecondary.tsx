@@ -1,7 +1,5 @@
 import logo from '../assets/icons/logo.jpg';
 import { Menu, X } from 'lucide-react';
-import Nav from './Nav';
-import { Link } from "react-scroll";
 import { Link as RouterLink } from "react-router-dom";
 import Button from './Button';
 
@@ -9,7 +7,7 @@ import { useState, useEffect } from 'react';
 import { IoCallOutline } from "react-icons/io5";
 
 
-const Header = () => {
+const HeaderSecondary = () => {
     const [active, setActive] = useState(false);
     const [menuOpened, setMenuOpened] = useState(false);
     const toggleMenu = () => setMenuOpened(!menuOpened);
@@ -27,26 +25,27 @@ const Header = () => {
     return (
       <header
         className={`${
-          active ? 'bg-amber-300 shadow-xl' : 'bg-white'
+          active ? 'bg-amber-400 shadow-xl' : 'bg-amber-300'
         } fixed top-0 left-0 right-0 w-full z-50 transition-all duration-200`}
       >
+        
         <div className="container mx-auto flex justify-between items-center px-4 ">
-          <Link
-            to=""
+          
+          <RouterLink
+            to="/"
             className="flexCenter py-3"
-            smooth={true}
-            duration={500}
+            
+          
           >
             <img src={logo} alt="logo" className="w-[110px] h-[100px] object-contain" />
-          </Link>
+          </RouterLink>
   
-          <div className="hidden md:flex">
-            
-            <Nav/>
-            
-          </div>
+          
   
           <div className="hidden md:flex  items-center gap-3 my-2">
+          <RouterLink to="/" className=" font-bold mr-17 hover:text-blue-800 transition-colors">
+              Home
+          </RouterLink>
           <RouterLink to="/login">
               <Button
                 type="button"
@@ -92,56 +91,7 @@ const Header = () => {
     >
       <X size={36} />
       </button>
-      <Link
-              to="home"
-              smooth
-              duration={500}
-              offset={-70}
-              onClick={toggleMenu}
-              className="hover:text-blue-700 cursor-pointer"
-            >
-              Home
-            </Link>
-            <Link
-              to="destinations"
-              smooth
-              duration={500}
-              offset={-70}
-              onClick={toggleMenu}
-              className="hover:text-blue-700 cursor-pointer"
-            >
-              Destinations
-            </Link>
-            <Link
-              to="offers"
-              smooth
-              duration={500}
-              offset={-70}
-              onClick={toggleMenu}
-              className="hover:text-blue-700 cursor-pointer"
-            >
-              Offers
-            </Link>
-            <Link
-              to="testimonial"
-              smooth
-              duration={500}
-              offset={-70}
-              onClick={toggleMenu}
-              className="hover:text-blue-700 cursor-pointer"
-            >
-              Testimonials
-            </Link>
-            <Link
-              to="downloads"
-              smooth
-              duration={500}
-              offset={-70}
-              onClick={toggleMenu}
-              className="hover:text-blue-700 cursor-pointer"
-            >
-              Get App
-            </Link>
+     
             <div className="text-lg font-medium">
   <RouterLink to="/register" className="hover:text-blue-700">Sign up</RouterLink>
   <span className="mx-1 text-gray-500">/</span>
@@ -164,4 +114,4 @@ const Header = () => {
     );
   };
 
-export default Header;
+export default HeaderSecondary;

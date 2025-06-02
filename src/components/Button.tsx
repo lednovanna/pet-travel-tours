@@ -1,11 +1,10 @@
-
- type ButtonProps = {
+type ButtonProps = {
     type: "button" | "submit";
     title: string;
     variant: string;
  };
 
-const Button = ({type, title, variant}: ButtonProps) => {
+const Button = ({ title, variant}: ButtonProps) => {
     return (
         
        <button className={`flex gap-2 hover:text-blue-700 ${variant}`}>

@@ -77,7 +77,7 @@ const PackageItem = ({URL, title, location, price, desShort, duration}: PackageI
         <div className="mt-auto px-4 pb-4">
                     <Link
                         to={`/packages/${encodeURIComponent(title)}`}
-                        className="inline-block w-full text-center bg-amber-600 hover:bg-amber-700 my-4 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300"
+                        className="inline-block w-full text-center bg-amber-600 hover:bg-amber-500 my-4 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300"
                     >
                         View Details
                     </Link>

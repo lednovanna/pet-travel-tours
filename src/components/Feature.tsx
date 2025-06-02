@@ -1,4 +1,4 @@
-import Slider from "react-slick";
+import Slider, { CustomArrowProps }  from "react-slick";
 import  { FEATURE } from '../data';
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { Link } from 'react-router-dom';
@@ -6,25 +6,25 @@ import { Link } from 'react-router-dom';
 
 const Feature = () => {
 
-        const NextArrow = (props: any) => {
-          const {onClick} = props;
-          return (
+        const NextArrow = ({ onClick }: CustomArrowProps) => ( 
+          
+          
             <div onClick={onClick} className="bg-white text-2xl p-3 inline-block rounded-lg shadow-md
             absolute  right-0 top-1/2 transform -translate-y-1/2 lg:right-4 z-10 ring-1 ring-slate-900/5 hover:bg-amber-600">
             <IoIosArrowForward />
             </div>
           )
-        }
+        
 
-        const PrevArrow = (props: any) => {
-          const {onClick} = props;
-          return (
+        const PrevArrow = ({ onClick }: CustomArrowProps) => ( 
+          
+          
             <div onClick={onClick} className="bg-white text-2xl p-3 inline-block rounded-lg shadow-md
             absolute  left-0 top-1/2 transform -translate-y-1/2 lg:left-4 z-10 ring-1 ring-slate-900/5 hover:bg-amber-600">
             <IoIosArrowBack />
             </div>
           )
-        }
+        
 
         const settings = {
           arrows: true,

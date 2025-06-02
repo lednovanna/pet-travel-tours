@@ -1,5 +1,6 @@
 import { PACKAGES } from '../data';
 import { useParams, Link } from 'react-router-dom';
+import HeaderSecondary from './HeaderSecondary';
 
 
 
@@ -19,6 +20,7 @@ const PackageDetails = () => {
 
     return(
         <section className="p-8 my-40 max-w-4xl mx-auto" >
+          <HeaderSecondary/>
             <div className="text-justify">
             <h2 className="text-3xl font-bold mb-4">{title}</h2>
             <img src={selectedPackage.URL} alt={title} className="w-full h-96 object-cover rounded-lg mb-6" />
@@ -36,7 +38,7 @@ const PackageDetails = () => {
                     >
                         Order
                     </Link>
-                    <Link to="/" className="text-blue-600 underline mt-4 block">← Back to all packages</Link>
+                    <Link to="/" className="text-blue-600 underline mt-4 block">← Back </Link>
                 </div>
                 
         </section>
