@@ -10,15 +10,13 @@ type Tour = {
   desShort: string;
 };
 
-type SearchResultsProps = {
-  results: Tour[];
-};
 
-const SearchResults: React.FC<SearchResultsProps> = ({ results }) => {
+const SearchResults: React.FC = () => {
     const location = useLocation();
+    const results = (location.state?.results || []) as Tour[];
   const noResults = location.state?.noResults;
 
-  if (noResults) {
+  if (noResults || results.length === 0) {
     return (
       <div className="text-center text-xl mt-20 text-gray-700 font-semibold">
         No results found for your search.
@@ -28,7 +26,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({ results }) => {
 
   if (results.length === 0) return null;
 
-  if (results.length === 0) return null;
+  
 
   return (
     <div className="bg-white bg-opacity-70 p-6 rounded-md mt-8 max-w-[900px] mx-auto">

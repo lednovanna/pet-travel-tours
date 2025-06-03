@@ -1,8 +1,9 @@
 import logo from '../assets/icons/logo.jpg';
 import { Menu, X } from 'lucide-react';
 import { Link as RouterLink } from "react-router-dom";
+import { FaShoppingCart } from "react-icons/fa";
 import Button from './Button';
-
+import { useCart } from './СartContext';
 import { useState, useEffect } from 'react';
 import { IoCallOutline } from "react-icons/io5";
 
@@ -11,6 +12,8 @@ const HeaderSecondary = () => {
     const [active, setActive] = useState(false);
     const [menuOpened, setMenuOpened] = useState(false);
     const toggleMenu = () => setMenuOpened(!menuOpened);
+    const { getTotalCount } = useCart();
+    const totalItems = getTotalCount();
   
     useEffect(() => {
       const handleScroll = () => {
@@ -33,7 +36,7 @@ const HeaderSecondary = () => {
           
           <RouterLink
             to="/"
-            className="flexCenter py-3"
+            className=" py-3"
             
           
           >
@@ -43,7 +46,7 @@ const HeaderSecondary = () => {
           
   
           <div className="hidden md:flex  items-center gap-3 my-2">
-          <RouterLink to="/" className=" font-bold mr-17 hover:text-blue-800 transition-colors">
+          <RouterLink to="/" className="bg-gray-100 py-2 px-3 rounded-lg font-bold mr-17 hover:text-blue-800 transition-colors">
               Home
           </RouterLink>
           <RouterLink to="/login">
@@ -63,11 +66,22 @@ const HeaderSecondary = () => {
             </RouterLink>
             <a
               href="tel:+380671234567"
-              className="hidden lg:flex hover:text-blue-700 ml-4  gap-1 text-l font-medium transition-colors duration-200 "aria-label="Phone number"
+              className="hidden lg:flex hover:text-blue-700 ml-4  gap-1 font- transition-colors duration-200 "aria-label="Phone number"
             >
               <IoCallOutline size={22}  title="phone icon" /> 
               +380 67 123 45 67
             </a>  
+             <RouterLink
+            to="/cart"
+            className="relative py-3"
+          >
+            <FaShoppingCart className="ml-7 w-[30px] h-[40px]"/>
+             {totalItems > 0 && (
+              <span className="absolute -top-0 -right-2 bg-red-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                {totalItems}
+                </span>
+              )}
+          </RouterLink>
           </div>
   
           {/* Burger icon */}
@@ -104,11 +118,17 @@ const HeaderSecondary = () => {
              <IoCallOutline size={22}  title="phone icon" /> 
               +380 67 123 45 67
             </a>
-            
+            <RouterLink
+            to="/"
+            className=" py-3"
+          >
+            <FaShoppingCart className=" w-[30px] h-[40px]"/>
+          </RouterLink>
           </div>
+          
         )}
         <div>
-           
+          
         </div>
       </header>
     );
