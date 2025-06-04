@@ -2,7 +2,7 @@ import { PACKAGES } from '../data';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import HeaderSecondary from './HeaderSecondary';
-import { useCart } from './СartContext';
+import { useCart } from './CartContext';
 
 
 
@@ -25,7 +25,8 @@ const PackageDetails = () => {
   addToCart({
     title: tour.title,
     price: totalPrice,
-    quantity: adults + children
+    quantity: adults + children,
+     URL: tour.URL,
   });
 }; 
 

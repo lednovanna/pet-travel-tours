@@ -12,6 +12,7 @@ import GetApp from './components/GetApp';
 import Register from './components/Register';
 import Login from './components/Login';
 import SearchResults from './components/SearchResults';
+import CartPage from './components/CartPage';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './App.css';
@@ -45,6 +46,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/packages/:title" element={<PackageDetails />} />
           <Route path="/search" element={<SearchPage />} />
+          <Route path="/cart" element={<CartPage/>}/>
         </Routes>
          
          

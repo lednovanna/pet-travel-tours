@@ -3,7 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { Link as RouterLink } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import Button from './Button';
-import { useCart } from './СartContext';
+import { useCart } from './CartContext';
 import { useState, useEffect } from 'react';
 import { IoCallOutline } from "react-icons/io5";
 

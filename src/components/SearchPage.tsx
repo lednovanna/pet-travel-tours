@@ -3,8 +3,9 @@ import SearchResults from "../components/SearchResults";
 import HeaderSecondary from "./HeaderSecondary";
  
 
+
+
 const SearchPage = () => {
-  
   
 
   return (

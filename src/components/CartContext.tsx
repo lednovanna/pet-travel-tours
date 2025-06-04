@@ -4,12 +4,14 @@ export type CartItem = {
   title: string;
   quantity: number;
   price: number;
+   URL: string;
 };
 
 type CartContextType = {
   items: CartItem[];
   addToCart: (item: CartItem) => void;
   getTotalCount: () => number;
+  removeFromCart: (title: string) => void;
 };
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -29,10 +31,14 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     });
   };
 
+   const removeFromCart = (title: string) => {
+    setItems(prev => prev.filter(i => i.title !== title));
+  };
+
   const getTotalCount = () => items.reduce((total, item) => total + item.quantity, 0);
 
   return (
-    <CartContext.Provider value={{ items, addToCart, getTotalCount }}>
+    <CartContext.Provider value={{ items, addToCart, getTotalCount, removeFromCart }}>
       {children}
     </CartContext.Provider>
   );
