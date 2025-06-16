@@ -248,14 +248,16 @@ export const initialState: FormData = {
     duplicate: "",
     email: "",
     surname: "",
+    autoComplete: "",
 };
 
 export type FormData = {
     name: string,
     password: string,
-    duplicate: string | undefined,
+    duplicate: string ,
     email: string,
     surname: string,
+    autoComplete: string,
 };
 
 export const FORM_LOGIN = [

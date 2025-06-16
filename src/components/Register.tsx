@@ -2,6 +2,8 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 import { FORM_REGISTER, initialState, FormData } from '../data';
 import { useNavigate } from 'react-router-dom';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../firebase/firebase';
 
 
 
@@ -23,10 +25,39 @@ const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormState((prev) => ({...prev, [name]: value}));
 };
 
-const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form Submited", formState);
-};
+    
+    const { email, password, duplicate } = formState;
+
+  if (!email || !password || !duplicate) {
+    return;
+  }
+
+  if (password !== duplicate) {
+    alert('Passwords do not match');
+    return;
+  }
+
+  if (password.length < 6) {
+    alert('Password must be at least 6 characters');
+    return;
+  }
+
+  try {
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    console.log('User registered:', userCredential.user);
+    navigate('/dashboard'); 
+  } catch (error: unknown) {
+  if (error instanceof Error) {
+    console.error(error.message);
+    alert(error.message);
+  } else {
+    console.error('Unknown error:', error);
+    alert('Something went wrong');
+  }
+}
+}
 
     return(
         <div className="flex justify-center p-5 items-center min-h-screen bg-gray-100">
@@ -59,10 +90,12 @@ const onSubmit = (e: FormEvent<HTMLFormElement>) => {
             name={item.name}
             placeholder={item.placeholder}
             type={item.type || "text"}
+            
             required={item.required || item.reguired}
             value={formState[item.name as keyof FormData] || ""}
             onChange={onChange}
             error={error}
+            
             showPassword={
                 item.name === 'password' ? showPassword : item.name === 'duplicate' ? showConfirm : undefined
               }
@@ -127,6 +160,7 @@ type InputProps = {
         <input
         name={name}
         type={isPasswordType && showPassword !== undefined ? (showPassword ? 'text' : 'password') : type}
+        autoComplete="new-password"
         value={value}
         onChange={onChange}
         placeholder={placeholder}

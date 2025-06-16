@@ -2,6 +2,8 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 import { FORM_LOGIN, initialLoginState, LoginFormData } from '../data';
 import { useNavigate } from 'react-router-dom';
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import { auth } from '../firebase/firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -38,7 +40,21 @@ const Login = () => {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      console.log('Logging in...', formState);
+      const { email, password } = formState;
+
+       signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Вход выполнен успешно
+      const user = userCredential.user;
+      console.log('Login successful:', user);
+      navigate('/dashboard'); // или куда нужно
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      setErrors({ general: errorMessage });
+      console.error('Login error:', errorCode, errorMessage);
+    });
     }
   };
 
@@ -107,7 +123,9 @@ const Login = () => {
         >
           Sign in
         </button>
-
+          {errors.general && (
+          <p className="text-sm text-red-500 text-center">{errors.general}</p>
+)}
         <button
           type="button"
           className="block text-center w-full text-blue-600 hover:underline text-sm mt-2"

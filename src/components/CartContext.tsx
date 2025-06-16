@@ -2,9 +2,10 @@ import React, { createContext, useContext, useState } from "react";
 
 export type CartItem = {
   title: string;
-  quantity: number;
-  price: number;
-   URL: string;
+  basePrice: number;
+  URL: string;
+  adults: number;   
+  children: number;
 };
 
 type CartContextType = {
@@ -24,7 +25,13 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const existing = prev.find(i => i.title === item.title);
       if (existing) {
         return prev.map(i =>
-          i.title === item.title ? { ...i, quantity: i.quantity + item.quantity } : i
+          i.title === item.title
+           ? {
+             ...i,
+              adults: i.adults + item.adults,
+              children: i.children + item.children,
+              
+             } : i
         );
       }
       return [...prev, item];
@@ -35,7 +42,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setItems(prev => prev.filter(i => i.title !== title));
   };
 
-  const getTotalCount = () => items.reduce((total, item) => total + item.quantity, 0);
+  const getTotalCount = () => items.reduce((total, item) => total + item.adults + item.children, 0);
 
   return (
     <CartContext.Provider value={{ items, addToCart, getTotalCount, removeFromCart }}>

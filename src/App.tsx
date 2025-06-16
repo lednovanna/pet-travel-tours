@@ -47,6 +47,7 @@ function App() {
           <Route path="/packages/:title" element={<PackageDetails />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/cart" element={<CartPage/>}/>
+          <Route path="/packageDetails" element={<PackageDetails/>}/>
         </Routes>
          
          

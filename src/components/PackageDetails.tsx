@@ -3,17 +3,19 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import HeaderSecondary from './HeaderSecondary';
 import { useCart } from './CartContext';
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 const PackageDetails = () => {
+  const navigate = useNavigate();
   const { addToCart } = useCart();
   const { title } = useParams();
   
   const tour = PACKAGES.find(pkg => pkg.title === title);
 
-  const [adults, setAdults] = useState(1);
+  const [adults, setAdults] = useState(0);
   const [children, setChildren] = useState(0);
 
   if (!tour) return <div className="text-center mt-20 text-xl">Tour not found.</div>;
@@ -24,9 +26,10 @@ const PackageDetails = () => {
    const handleOrder = () => {
   addToCart({
     title: tour.title,
-    price: totalPrice,
-    quantity: adults + children,
+    basePrice: basePrice,
      URL: tour.URL,
+    adults: adults,  
+    children: children,
   });
 }; 
 
@@ -81,7 +84,15 @@ const PackageDetails = () => {
                     >
                         Order
                     </button>
-                    
+                    <div className="flex justify-start">
+                    <button
+                    type="button"
+                    onClick={() => navigate(-1)}
+                    className="text-blue-600 self-end hover:underline text-md  cursor-pointer"
+                      >
+                    ← Back
+                    </button>
+                    </div>
                 </div>
                 
         </section>
